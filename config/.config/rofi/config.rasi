@@ -1,0 +1,123 @@
+configuration {
+    modi: "run,drun,window";
+    icon-theme: "Oranchelo";
+    show-icons: false;           /* Хакерам іконки не потрібні */
+    terminal: "alacritty";       /* Або st, залежно від того, що юзаєш */
+    drun-display-format: "{name}";
+    location: 0;
+    disable-history: false;
+    hide-scrollbar: true;
+    display-drun: " 🖥️  Apps ";
+    display-run: " 🏃  Run ";
+    display-window: " 🪟  Window ";
+    sidebar-mode: true;
+}
+
+* {
+    bg-col:  #000000;             /* Глибокий чорний */
+    bg-col-light: #000000;
+    border-col: #00FF00;          /* Яскравий хакерський зелений */
+    selected-col: #000000;
+    fg-col: #00FF00;              /* Зелений текст */
+    fg-col2: #008800;             /* Тьмяніший зелений для неактивних елементів */
+
+    width: 600;
+    font: "JetBrainsMono Nerd Font 12"; /* Моноширинний шрифт - must have */
+}
+
+element-text, element-icon , mode-switcher {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
+window {
+    height: 360px;
+    border: 2px;                  /* Чітка рамка */
+    border-color: @border-col;
+    background-color: @bg-col;
+    border-radius: 0px;           /* Ніяких скруглень */
+}
+
+mainbox {
+    background-color: @bg-col;
+}
+
+inputbar {
+    children: [prompt,entry];
+    background-color: @bg-col;
+    border-radius: 0px;
+    padding: 2px;
+}
+
+prompt {
+    background-color: @border-col;
+    padding: 6px;
+    text-color: @bg-col;          /* Інверсія кольору для промпта */
+    border-radius: 0px;
+    margin: 20px 0px 0px 20px;
+}
+
+textbox-prompt-colon {
+    expand: false;
+    str: ":";
+}
+
+entry {
+    padding: 6px;
+    margin: 20px 0px 0px 10px;
+    text-color: @fg-col;
+    background-color: @bg-col;
+}
+
+listview {
+    border: 0px 0px 0px;
+    padding: 6px 0px 0px;
+    margin: 10px 0px 0px 20px;
+    columns: 1;
+    lines: 5;
+    background-color: @bg-col;
+}
+
+element {
+    padding: 5px;
+    background-color: @bg-col;
+    text-color: @fg-col2;        /* Неактивні пункти трохи темніші */
+}
+
+element selected {
+    background-color:  @bg-col;
+    text-color: @fg-col;         /* Активний пункт яскравий */
+    border: 1px;                 /* Виділення рамкою замість заливки */
+    border-color: @border-col;
+}
+
+mode-switcher {
+    spacing: 0;
+  }
+
+button {
+    padding: 10px;
+    background-color: @bg-col-light;
+    text-color: @fg-col2;
+    vertical-align: 0.5; 
+    horizontal-align: 0.5;
+}
+
+button selected {
+  background-color: @bg-col;
+  text-color: @fg-col;
+}
+
+message {
+    background-color: @bg-col-light;
+    margin: 2px;
+    padding: 2px;
+    border-radius: 0px;
+}
+
+textbox {
+    padding: 6px;
+    margin: 20px 0px 0px 20px;
+    text-color: @fg-col;
+    background-color: @bg-col-light;
+}

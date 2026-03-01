@@ -1,0 +1,44 @@
+# Налаштування вікна (добре для dwm)
+[window]
+padding = { x = 10, y = 10 } # Невеликі відступи, щоб текст не лип до країв
+dynamic_title = true
+opacity = 1.0                # Справжній чорний без прозорості
+
+[font]
+# Використовуємо Nerd Font, який у тебе вже встановлений
+normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
+bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
+italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }
+size = 12.0                 
+
+[colors.primary]
+background = "#000000"       # Ідеальний AMOLED чорний
+foreground = "#e0e0e0"       # Світло-сірий текст для комфортного читання
+
+[colors.cursor]
+text = "#000000"
+cursor = "#00FF41"           # Хакерський зелений курсор
+
+# Колірна схема в стилі термінала (зелені акценти)
+[colors.normal]
+black   = "#000000"
+red     = "#ff5555"
+green   = "#00FF41"           # Основний зелений
+yellow  = "#f1fa8c"
+blue    = "#bd93f9"
+magenta = "#ff79c6"
+cyan    = "#8be9fd"
+white   = "#f8f8f2"
+
+[colors.bright]
+black   = "#4d4d4d"
+red     = "#ff6e67"
+green   = "#5af78e"           # Яскравий зелений для виділення
+yellow  = "#f4f99d"
+blue    = "#caa9fa"
+magenta = "#ff92d0"
+cyan    = "#9aedfe"
+white   = "#e6e6e6"
+
+[selection]
+save_to_clipboard = true      # Сисадмінська звичка — копіювати при виділенні

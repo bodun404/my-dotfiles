@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Отримуємо поточну розкладку
+CURRENT=$(setxkbmap -query | grep layout | awk '{print $2}' | cut -d',' -f1)
+
+# Логіка перемикання
+if [ "$CURRENT" = "us" ]; then
+    setxkbmap ua,us
+    ICON="🇺🇦"
+    TEXT="Ukrainian"
+else
+    setxkbmap us,ua
+    ICON="🇺🇸"
+    TEXT="English"
+fi
+
+# Відправка повідомлення
+notify-send -r 9999 -t 800 "$ICON  $TEXT"
+EOF

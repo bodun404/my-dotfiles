@@ -1,0 +1,23 @@
+export PATH="$HOME/.local/bin:$PATH"
+export QT_QPA_PLATFORMTHEME=qt5ct
+export GTK_THEME=Materia-dark
+/usr/bin/lxqt-policykit-agent &
+#===Main autostart====
+slstatus &
+picom --config /home/q/.config/picom/picom.conf &
+setxkbmap -layout us,ru,ua -option grp:alt_shift_toggle &
+dunst & #Notification demon
+feh --bg-fill /home/q/Pictures/anarchy1.png &
+
+#====Scripts====
+/home/q/.local/bin/lang-watcher & #script to show lang change notification
+/home/q/.local/bin/net-notify.sh &
+/home/q/.local/bin/bat-notify.sh &
+
+#====Programs====
+Telegram &
+alacritty -t "System Monitor" -e btop &
+
+#=====NIGHT LIGHT(GAMMASTEP)====
+#Coordinates of Kyiv/Fastiv
+gammastep -l 50.08:29.91 &

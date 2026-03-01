@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# Функція отримує назву мови прямо від системи (English, Ukrainian, Russian)
+get_layout() {
+    xkblayout-state print "%n"
+}
+
+LAST_LAYOUT=$(get_layout)
+
+while true; do
+    CURRENT_LAYOUT=$(get_layout)
+
+    if [ "$CURRENT_LAYOUT" != "$LAST_LAYOUT" ]; then
+
+        if [ "$CURRENT_LAYOUT" = "Russian" ]; then
+            ICON="🇷🇺" 
+            TEXT="Russian"
+        elif [ "$CURRENT_LAYOUT" = "Ukrainian" ]; then
+            ICON="🇺🇦"
+            TEXT="Ukrainian"
+        else
+            ICON="🇺🇸"
+            TEXT="English"
+        fi
+
+        notify-send -r 9999 -t 800 "$ICON  $TEXT"
+        LAST_LAYOUT="$CURRENT_LAYOUT"
+    fi
+    sleep 0.2
+done

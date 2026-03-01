@@ -1,0 +1,42 @@
+[global]
+    monitor = 0
+    follow = mouse
+    
+    # --- РОЗМІР І ПОЗИЦІЯ ---
+    width = 300
+    height = 100
+    origin = center
+    offset = 0x0
+    
+    # --- ВИГЛЯД ---
+    font = Monospace 16
+    frame_width = 2
+    corner_radius = 0
+    transparency = 10
+    
+    # Відступи тексту
+    padding = 20
+    horizontal_padding = 20
+    
+    # Вирівнювання тексту
+    alignment = center
+    vertical_alignment = center
+
+    # Кольори
+    frame_color = "#00ff41"
+    separator_color = frame
+
+[urgency_low]
+    background = "#e0e0e0"
+    foreground = "#00ff41"
+
+[urgency_normal]
+    background = "#000000"
+    foreground = "#00ff41"
+    timeout = 2
+
+[urgency_critical]
+    background = "#900000"
+    foreground = "#ffffff"
+    frame_color = "#ff0000"
+    timeout = 0

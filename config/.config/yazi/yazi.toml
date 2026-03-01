@@ -1,0 +1,27 @@
+[opener]
+edit = [
+    { run = 'nvim "$@"', block = true, desc = "Edit" },
+]
+play = [
+    { run = 'mpv "$@"', orphan = true, desc = "Play" },
+]
+view = [
+    { run = 'nsxiv "$@"', orphan = true, desc = "View Image" },
+]
+read = [
+    { run = 'zathura "$1"', orphan = true, desc = "Read PDF" },
+]
+
+[open]
+rules = [
+    # Спочатку специфічні правила
+    { name = "*/", use = "edit" },
+    { mime = "text/*", use = "edit" },
+    { mime = "image/*", use = "view" },
+    { mime = "video/*", use = "play" },
+    { mime = "audio/*", use = "play" },
+    { mime = "application/pdf", use = "read" },
+
+    # В кінці - фолбек на системний xdg-open для всього іншого
+    { name = "*", use = "open" },
+]

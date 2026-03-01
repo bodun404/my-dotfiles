@@ -1,0 +1,15 @@
+#!/bin/sh
+
+#Menu variants
+options="Shutdown\nReboot\nLogout\nCancel"
+
+#dmenu Call
+chosen=$(echo -e "$options" | dmenu -b -i -p "Power Menu:" -sb '#2d5a27')
+
+#Processing user choose
+case "$chosen" in
+	"Shutdown") shutdown now ;;
+	"Reboot") reboot ;;
+	"Logout") pkill dwm ;; #Kill dwm return to LightDM
+	"Cancel") exit 0 ;;
+esac
